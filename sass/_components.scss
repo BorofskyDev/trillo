@@ -250,7 +250,7 @@
 
   & span {
     margin-left: 3px;
-    transition: margin-left .2s;
+    transition: margin-left 0.2s;
   }
 
   &:hover {
@@ -260,7 +260,6 @@
       margin-left: 8px;
     }
   }
-
 
   &:focus {
     outline: none;
@@ -402,5 +401,73 @@
     font-family: sans-serif;
     z-index: 1;
   }
+}
 
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__book-now {
+    font-style: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-style: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  & > * {
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+  }
+
+  &__hidden {
+    display: inline-block;
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+
+&:hover {
+    background-image: linear-gradient(
+    to left,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+}
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__hidden {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
 }
